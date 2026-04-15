@@ -54,7 +54,7 @@ params:
     normalize_value: True
     num_actors: 256  # configured from the script (based on num_envs)
     reward_shaper:
-      scale_value: 1.0
+      scale_value: 0.01
     normalize_advantage: True
     gamma: 0.99
     tau : 0.95
