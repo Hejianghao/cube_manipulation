@@ -25,10 +25,10 @@ class LiftSceneCfg(InteractiveSceneCfg):
     # 地面
     ground = AssetBaseCfg(
         prim_path="/World/ground",
-        spawn=sim_utils.GroundPlaneCfg(),
-        # spawn=sim_utils.GroundPlaneCfg(
-        #     usd_path="/home/tqp9490/isaac_assets/Assets/Isaac/5.1/Isaac/Environments/Grid/default_environment.usd"
-        # ),
+        # spawn=sim_utils.GroundPlaneCfg(),
+        spawn=sim_utils.GroundPlaneCfg(
+            usd_path="/home/tqp9490/isaac_assets/Assets/Isaac/5.1/Isaac/Environments/Grid/default_environment.usd"
+        ),
     )
 
     # 灯光
@@ -44,10 +44,10 @@ class LiftSceneCfg(InteractiveSceneCfg):
     robot: ArticulationCfg = FRANKA_PANDA_CFG.replace(
         # 占位符会被替换为 /world/envs/env_0/Robot
         prim_path="{ENV_REGEX_NS}/Robot",
-        # spawn=FRANKA_PANDA_CFG.spawn.replace(
-        #     usd_path="/home/tqp9490/isaac_assets/Assets/Isaac/5.1/Isaac/IsaacLab/Robots/FrankaEmika/panda_instanceable.usd",
-        #     # activate_contact_sensors=True,
-        # ),
+        spawn=FRANKA_PANDA_CFG.spawn.replace(
+            usd_path="/home/tqp9490/isaac_assets/Assets/Isaac/5.1/Isaac/IsaacLab/Robots/FrankaEmika/panda_instanceable.usd",
+            # activate_contact_sensors=True,
+        ),
         init_state=ArticulationCfg.InitialStateCfg(
             # pos的含义是机器人坐标，分别表示位置（x, y, z）x是前后方向，y是左右方向，z是垂直方向
             # rot的含义是机器人旋转，四元数表示（w, x, y, z）
