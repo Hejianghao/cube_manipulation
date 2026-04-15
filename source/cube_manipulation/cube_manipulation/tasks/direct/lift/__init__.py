@@ -13,11 +13,11 @@ from . import agents
 
 
 gym.register(
-    id="Template-Cube-Manipulation-Direct-v0",
-    entry_point=f"{__name__}.cube_manipulation_env:CubeManipulationEnv",
+    id="Lift-Cube-Direct-v0",
+    entry_point=f"{__name__}.lift_env:LiftEnv",
     disable_env_checker=True,
     kwargs={
-        "env_cfg_entry_point": f"{__name__}.cube_manipulation_env_cfg:CubeManipulationEnvCfg",
+        "env_cfg_entry_point": f"{__name__}.lift_env_cfg:LiftEnvCfg",
         "rl_games_cfg_entry_point": f"{agents.__name__}:rl_games_ppo_cfg.yaml",
     },
 )
