@@ -496,7 +496,7 @@ class LiftEnv(DirectRLEnv):
         phase1_reward = 0.6 * reward_reach + 0.2 * reward_openning + 0.2 * reward_alignment
         phase2_reward = 0.6 * reward_reach + 0.2 + 0.2 * reward_alignment \
                         + 0.2 * reward_close * reward_alignment + reward_grasp\
-                        + 100.0 * reward_lift + 200.0 * success.float()
+                        + 1.0 * reward_lift + 2.0 * success.float()
 
         reward = torch.where(
             distance > self._grasp_distance_threshold,
